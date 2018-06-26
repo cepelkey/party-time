@@ -2,6 +2,6 @@
 require 'init.php';
 
 $app = new App();
-$app->add('Hello World!');
+$app->add('HelloWorld');
 
 exit;

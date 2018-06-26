@@ -9,7 +9,7 @@ class App extends \atk4\ui\App {
         if ($is_admin) {
             $this->initLayout('Admin');
         } else {
-            $this->initLaout('Centered');
+            $this->initLayout('Centered');
         }
     }
 }
