@@ -1,5 +1,7 @@
 <?php
-require './vendor/autoload.php';
+require 'init.php';
 
-$app = new \atk4\ui\App('Party Time');
-$app->initLayout('Centered');
+$app = new App();
+$app->add('Hello World!');
+
+exit;
