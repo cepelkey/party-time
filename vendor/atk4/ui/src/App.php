@@ -16,7 +16,7 @@ class App
 
     // @var array|false Location where to load JS/CSS files
     public $cdn = [
-        'atk'              => 'https://cdn.rawgit.com/atk4/ui/1.5.1/public',
+        'atk'              => 'https://cdn.rawgit.com/atk4/ui/1.5.3/public',
         'jquery'           => 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1',
         'serialize-object' => 'https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0',
         'semantic-ui'      => 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1',
@@ -24,7 +24,7 @@ class App
     ];
 
     // @var string Version of Agile UI
-    public $version = '1.5.1';
+    public $version = '1.5.3';
 
     // @var string Name of application
     public $title = 'Agile UI - Untitled Application';
@@ -240,20 +240,13 @@ class App
     /**
      * Initializes layout.
      *
-     * @param string|Layout\Generic $layout
-     * @param array                 $options
+     * @param string|Layout\Generic|array $seed
      *
      * @return $this
      */
-    public function initLayout($layout, $options = [])
+    public function initLayout($seed)
     {
-        $layout = $this->factory($layout, null, 'Layout');
-        /*
-        if (is_string($layout)) {
-            $layout = $this->normalizeClassNameApp($layout, 'Layout');
-            $layout = new $layout($options);
-        }
-        */
+        $layout = $this->factory($seed, null, 'Layout');
         $layout->app = $this;
 
         if (!$this->html) {

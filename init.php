@@ -24,8 +24,8 @@ class Guest extends \atk4\data\Model {
         $this->addFields([
             ['first_name', 'required'=>true],
             ['last_name', 'required'=>true],
-            ['email', 'required'=>true],
-            'phone'
+            'email',
+            ['phone', 'required'=>true]
         ]);
         $this->addField('age', ['required'=>true]);
         $this->addField('gender', ['enum'=>['male','female']]);
