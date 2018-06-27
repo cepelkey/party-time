@@ -38,7 +38,9 @@ class Dashboard extends \atk4\ui\View {
     function setModel($m){
         $model = parent::setModel($m);
         $this->template['guests'] = $model->action('count')->getOne();
+        $this->template['avg_age'] = round($model->action('fx',['avg','age'])->getOne());
         $this->template['drinks'] = $model->action('fx',['sum','drink_qty'])->getOne();
+
         return $model;
     }
 }
