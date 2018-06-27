@@ -13,7 +13,7 @@ class App extends \atk4\ui\App {
         } else {
             $this->initLayout('Centered');
         }
-        $this->dbConnect('mysql://root:@localhost/party-time');
+        $this->dbConnect(isset($_ENV['CLEARDB_DATABASE_URL']) ? $_ENV['CLEARDB_DATABASE_URL'] : 'mysql://root:@localhost/party-time');
     }
 }
 class Guest extends \atk4\data\Model {
